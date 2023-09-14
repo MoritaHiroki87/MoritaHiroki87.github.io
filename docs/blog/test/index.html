@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>My First Post! | My New Hugo Site</title>
+<title>My First Post! | もりたの技術ブログ</title>
 <meta name="keywords" content="">
 <meta name="description" content="これはなに えー、技術ブログをそろそろ作るか〜〜って思ってたところ、hugoとgithub.ioで簡単にできると知ったためやってみたよという記事です。
 やってみた手順 基本的に以下のページを参考に進めた。やり方はリンク先見てくれればそれでOK、詰まった箇所だけ記載する。 https://dampgblog.hinohikari291.com/hugo-github-mac/
@@ -120,7 +120,7 @@ Error: error building site: render: failed to render pages: render of &#34;secti
     
   ],
   "articleBody": "これはなに えー、技術ブログをそろそろ作るか〜〜って思ってたところ、hugoとgithub.ioで簡単にできると知ったためやってみたよという記事です。\nやってみた手順 基本的に以下のページを参考に進めた。やり方はリンク先見てくれればそれでOK、詰まった箇所だけ記載する。 https://dampgblog.hinohikari291.com/hugo-github-mac/\nちょっとつまづいた箇所 テーマの取得 テーマのサイトが紹介されてるんですが、サイトのどこからgithubページに移動できるのかわかんなくてちょっと詰まった 結論としては個別のテーマのページからdownloadボタンでいけた。\ngit submodule add コマンド 初めて使ったのでめっちゃ打ち間違えた\nconfig.toml デフォルトだとなくて、hugo.tomlがあるのみ。 とりあえずそこかな〜〜と思ってhugo.tomlに設定を書いてたんだけど、その後ビルドしようとしたところで設定ファイルないから新しくサイト作り直せや！　みたいな過激派エラーに遭遇した。\nError: Unable to locate config file or config directory. Perhaps you need to create a new site. Run `hugo help new` for details. 対策は以下のページを参考にしようかな？　と思ったんだけど、hugo.tomlが何かに使われてたらいやだし、まあ一旦別のconfファイル作るかってなった https://zenn.dev/shotakaha/scraps/1075f3199aa570\nで、今度は以下のエラー\nError: error building site: render: failed to render pages: render of \"section\" failed: \"/Users/hirokimorita/work/MoritaHiroki87.github.io/themes/resume/layouts/_default/section.html:9:11\": execute of template failed: template: _default/section.html:9:11: executing \"main\" at ",
-  "wordCount" : "101",
+  "wordCount" : "131",
   "inLanguage": "en",
   "datePublished": "2023-09-14T08:17:30+09:00",
   "dateModified": "2023-09-14T08:17:30+09:00",
@@ -130,7 +130,7 @@ Error: error building site: render: failed to render pages: render of &#34;secti
   },
   "publisher": {
     "@type": "Organization",
-    "name": "My New Hugo Site",
+    "name": "もりたの技術ブログ",
     "logo": {
       "@type": "ImageObject",
       "url": "https://MoritaHiroki87.github.io/favicon.ico"
@@ -155,7 +155,7 @@ Error: error building site: render: failed to render pages: render of &#34;secti
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://MoritaHiroki87.github.io/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="https://MoritaHiroki87.github.io/" accesskey="h" title="もりたの技術ブログ (Alt + H)">もりたの技術ブログ</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -234,6 +234,61 @@ Run `hugo help new` for details.
 <p>とりあえず公開できたのでGood
 使ってるgithubアカウント、昔から持ってる変なやつなので、これを機に新しく取り直してもいいかもなと思うなど。
 以上！</p>
+<h2 id="課題">課題<a hidden class="anchor" aria-hidden="true" href="#課題">#</a></h2>
+<p>とりあえず、課題がいくつかあるな〜〜と思うのでメモ</p>
+<ul>
+<li>mdのなんだ？　ローカルバージョンみたいなのがおそらく違ってて、改行してほしいところで改行してない</li>
+<li>ローカル開発環境整備
+<ul>
+<li>VSCでブログ書いてサクッとデプロイ、としたいんだけど、VSCのgitプラグインを入れてないのでそこら辺がスムーズにいかない</li>
+<li>あとgithubのなんだ？　あの〜〜認証まわりがぐだぐだになってるので整備したほうがいい</li>
+<li>VSCでもそこらへんのを環境変数に設定していい感じにしたほうがいい</li>
+</ul>
+</li>
+<li>hugo自体
+<ul>
+<li>config.tomlとhugo.tomlの違いを理解する</li>
+<li>他のテーマを使えるようにしたい、今のやつはちょっとなんかもうちょいな感じがある
+<ul>
+<li>具体的には行間がつまり過ぎているとか</li>
+<li>あとまあ最終的にはポートフォリオ的なものにもなっててほしいし、一旦はあの諦めたresumeテーマを使えるようにしようかな</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ブログの投稿ルーチン
+<ul>
+<li>投稿の流れとして、普段はNotionでまとめてそれをコピペして技術ブログとして公開する予定</li>
+<li>ここ、多分APIとか叩いたら自動化できるんじゃないかなあ
+<ul>
+<li>もしくは、GithubActions押すとNotionに取りに行ってくれて更新されるとか。。</li>
+<li>こういう改善点を思いついてやろうと思えるの、現職での経験がだいぶでかいので本当にマジでマジで現職には感謝しております</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="今後の予定">今後の予定<a hidden class="anchor" aria-hidden="true" href="#今後の予定">#</a></h2>
+<ul>
+<li>ローカル環境整備
+<ul>
+<li>VSCの整備</li>
+<li>git関連のプラグインを入れて、スムーズにpushできるようにする</li>
+</ul>
+</li>
+<li>hugo
+<ul>
+<li>設定ファイルの謎をとく</li>
+<li>resumeテーマを使えるようにする</li>
+</ul>
+</li>
+<li>ブログ投稿の簡易化
+<ul>
+<li>Github Actionsとかで簡単に投稿できるようにする</li>
+</ul>
+</li>
+</ul>
+<p>よっしがんばります！</p>
 
 
   </div>
@@ -246,7 +301,7 @@ Run `hugo help new` for details.
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://MoritaHiroki87.github.io/">My New Hugo Site</a></span>
+    <span>&copy; 2023 <a href="https://MoritaHiroki87.github.io/">もりたの技術ブログ</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
