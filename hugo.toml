@@ -1,0 +1,5 @@
+baseURL = 'https://MoritaHiroki87.github.io/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'paperMod'
+publishDir = 'docs'
